@@ -1,0 +1,68 @@
+Enter password: ******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 5.5.62 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use shubham;
+Database changed
+mysql> create table mens(
+    -> id int primary key not null,
+    -> first_name varchar(10) not null,
+    -> last_name varchar(10) not null,
+    -> address varchar(10) not null,
+    -> city varchar(10) not null
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc mens;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int(11)     | NO   | PRI | NULL    |       |
+| first_name | varchar(10) | NO   |     | NULL    |       |
+| last_name  | varchar(10) | NO   |     | NULL    |       |
+| address    | varchar(10) | NO   |     | NULL    |       |
+| city       | varchar(10) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+
+mysql> insert into mens values(1,'shubham','dudhal',
+    -> 'ghansoli','mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> insert into mens values(2,'shubham','dudhal','ghansoli','mumbai');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into mens values(3,'shubham','dudhal','ghansoli','mumbai');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into mens values(4,'shubham','dudhal','ghansoli','mumbai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mens values(5,'shubham','dudhal','ghansoli','mumbai');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from mens
+    -> ;
++----+------------+-----------+----------+--------+
+| id | first_name | last_name | address  | city   |
++----+------------+-----------+----------+--------+
+|  1 | shubham    | dudhal    | ghansoli | mumbai |
+|  2 | shubham    | dudhal    | ghansoli | mumbai |
+|  3 | shubham    | dudhal    | ghansoli | mumbai |
+|  4 | shubham    | dudhal    | ghansoli | mumbai |
+|  5 | shubham    | dudhal    | ghansoli | mumbai |
++----+------------+-----------+----------+--------+
+5 rows in set (0.00 sec)
+
+mysql>
